@@ -29,6 +29,15 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
  最后将Routes.config加入到你的站点根目录下。
  ## 三.XML配置(Models.config)
  ### A.Config根节点
+ 配置文件根节点
+ ### B.Adapter适配器
+ 属性 name 为所用 适配器名称 default为Command默认连接；<br/>
+ 节点内容为连接操作数据库URI
+ #### Sqlserver
+ <Adapter name="mssql">mssql://sa:pwd@localhost/master</Adapter>
+ ### Mysql
+ <Adapter name="mysql">mysql://root:pwd@localhost/mysql?charset=UTF8</Adapter>
+
 
                                                        
 
