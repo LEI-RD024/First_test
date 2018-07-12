@@ -34,10 +34,18 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
  属性 name 为所用 适配器名称 default为Command默认连接；<br/>
  节点内容为连接操作数据库URI
  #### Sqlserver
+ ```C#
  <Adapter name="mssql">mssql://sa:pwd@localhost/master</Adapter>
- ### Mysql
+ ```
+ #### Mysql
+ ```C#
  <Adapter name="mysql">mysql://root:pwd@localhost/mysql?charset=UTF8</Adapter>
-
-
-                                                       
-
+ ```
+ #### Postgresql
+ ```C#
+ <Adapter name="pgsql">pgsql://postgres:pwd@localhost/postgres?charset=UTF8</Adapter>
+ ```                                                      
+ #### Oracle
+ ```C#
+ <Adapter name="oracle">ora://system:pwd@localhost:1521/Sample</Adapter>
+ ```
