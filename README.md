@@ -7,10 +7,28 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
 ### B.Web API配置
 新建Gateway.aspx 加载文件引入<%@ Page Language="C#"  ValidateRequest="false"   Debug="true"   Inherits="MrTe.Models.Gateway" %>
 ### C.RestFull配置
-如是.net 2.0 web.config在/configuration/system.web加入<br/>
+如是.net 2.0 web.config请在/configuration/system.web加入<br/>
 ```C#
 <httpHandlers>
     <add verb="*"  validate="false" path="/api*" type="MrTe.Models.RestfullApi,Models />
 </httpHandlers>
+```
+如是.net 4.0请在/configuration/加入<br/>
+```C#
+<system.webServer>
+   <modules>
+     <remove name="WebDAVModule" />
+   </modules>
+   <handlers>
+     <remove name="WebDAV" /> 
+     <add name="RestfullApi" verb="*" path="/Core/api*"  type="MrTe.Models.RestfullApi,App_Code" preCondition="integratedMode" />
+   </handlers>
+   <validation validateIntegratedModeConfiguration="false" />
+ </system.webServer>
+ ```
+ 最后将Routes.config加入到你的站点根目录下。
+ ## 三.XML配置(Models.config)
+ ### A.Config根节点
+
                                                        
 
