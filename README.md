@@ -68,3 +68,35 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
  ```
  ### D.General常规设置
  属性:primarykey 主键关键字,createdkey创建时间关键字,modifyedkey:修改时间关键字。
+ ### E.Command操作指令
+ 属性:name 调用名,type 操作类型(getRows,getRow,getResult,setRows,Remove)<br/>
+ primarykey 主键关键字,createdkey创建时间关键字,modifyedkey:修改时间关键字<br/>
+ Command 子节点 map使用<br/>
+ 在getRows中为将 Command 连接到父节点内容中<br/>
+ 在setRows中map为将 name名为JsonData值中<br/>
+ getRows append="true"为所有内容并行加入<br/>
+ getRows,setRows redirect 重定Command 位置<br/>
+ #### Command/Verify检验
+ 属性:name在基本操作所对用的名中(Command[@name="Base"])<br/>
+ 检验表达式内容为JSON对象
+ ```JSON
+ {
+  Id:{title:"ID标识",patterns:[["Required","不能为空"],["/[0-9a-f\-]{16,36}/i","必需为16个字符"]]},
+  Modifyed:{title:"修改时间",patterns:[["Required","不能为空"],["/[0-9]{4,4}\-[0-9]{1,2}\-[0-9]{1,2}/","格式有误"]]},
+  Mobile:{title:"手机",patterns:[["Required","不能为空"],["not this.Checked('Unique.Members_Mobile',$jvars)","已注册"]]},
+  SMSCode:{title:"手机验证码",patterns:[["Required","不能为空"],
+  ["this.Condition(\"'{ROOT.Session.SMSCode}'=='{SMSCode}'\")","无效"]
+  ]},
+  Password:{title:"密码",patterns:[["Required","不能为空"]]},
+  RePassword:{title:"确认密码",patterns:[["Required","不能为空"],["this.Confirm($value,$jvars,'Password')","两次密码输入不符"]]},
+  RecommendCode:{title:"邀请码",patterns:[["this.Checked('Unique.Members_RecommendCode',$jvars)","无效"]]}
+ }
+ ```
+ JSON键为输入JSON键title为键标题patterns判定部分 Required空值判定 判定部分第一个值为正则表达式时按正则判定.如果第一个值有圆括号为判段函数。<br/>
+ 系统内置函数<br/>
+ this.Checked 可以从Models.conf获取内容如果为空则返回false<br/>
+ ["this.Checked('ref getRow:App.Member_Property_Check_{Type}',$jvars)","验证失败"]<br/>
+ Ref 将Checked获取内容载入 输入JsonData中<br/>
+ this.Condition 条件表达式判定
+ #### Command/Field字段(setRows专用)
+
