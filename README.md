@@ -8,8 +8,9 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
 新建Gateway.aspx 加载文件引入<%@ Page Language="C#"  ValidateRequest="false"   Debug="true"   Inherits="MrTe.Models.Gateway" %>
 ### C.RestFull配置
 如是.net 2.0 web.config在/configuration/system.web加入<br/>
+```C#
 <httpHandlers>
     <add verb="*"  validate="false" path="/api*" type="MrTe.Models.RestfullApi,Models />
- </httpHandlers>
+</httpHandlers>
                                                        
 
