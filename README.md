@@ -49,3 +49,22 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
  ```C#
  <Adapter name="oracle">ora://system:pwd@localhost:1521/Sample</Adapter>
  ```
+ #### Sybase
+ ```C#
+ <Adapter name="sybase">ase//sa:pwd@localhost/master</Adapter>
+ ```
+ #### DB2
+ ```C#
+ <Adapter name="db2">db2://db2admin:pwd@localhost/Sample</Adapter>
+ ```
+ #### Http
+ ```C#
+ <Adapter name="odata">http//auth:pwd@localhost/master</Adapter>
+ ```
+ ### C.CFG配置变量
+ 定义配置变量表的前缀
+ ```C#
+ <CFG name="TBPRE">dc_</CFG>
+ ```
+ ### D.General常规设置
+ 属性:primarykey 主键关键字,createdkey创建时间关键字,modifyedkey:修改时间关键字。
