@@ -1,15 +1,8 @@
-# First_test
-Just test
-## test02
-### test03
-直接输入的文字就是普通文本。需要注意的是要换行的时候不能直接通过回车<br/>
-来换行，需要使用br来换行<br/>
-    tab富实现单行文本<br/>
-    部分文字实现`高亮`，实用的是tab上方的''<br/>
-文字超链接[开源科技](http://www.overmcse.com“悬停显示”)，这里再加上了鼠标悬停显示<br/>
-* 圆点符号
->数据结构
->>树
->>>二叉树
->>>>平衡二叉树
->>>>>满二叉树
+# 数据模型化(RModel)说明文档
+## 一.简介
+RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射,缓存序列化框架。
+## 二.安装
+### A.主程序安装
+将 Models.dll 文件置于 asp.net 站点根目录Bin中再将Models.config放入根目录。
+### B.Web API配置
+新建Gateway.aspx 加载文件引入<%@ Page Language="C#"  ValidateRequest="false"   Debug="true"   Inherits="MrTe.Models.Gateway" %>
