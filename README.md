@@ -94,9 +94,23 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
  ```
  JSON键为输入JSON键title为键标题patterns判定部分 Required空值判定 判定部分第一个值为正则表达式时按正则判定.如果第一个值有圆括号为判段函数。<br/>
  系统内置函数<br/>
- this.Checked 可以从Models.conf获取内容如果为空则返回false<br/>
- ["this.Checked('ref getRow:App.Member_Property_Check_{Type}',$jvars)","验证失败"]<br/>
- Ref 将Checked获取内容载入 输入JsonData中<br/>
- this.Condition 条件表达式判定
+    this.Checked 可以从Models.conf获取内容如果为空则返回false<br/>
+    ["this.Checked('ref getRow:App.Member_Property_Check_{Type}',$jvars)","验证失败"]<br/>
+    Ref 将Checked获取内容载入 输入JsonData中<br/>
+    this.Condition 条件表达式判定
  #### Command/Field字段(setRows专用)
+    Field为组建操作命令通过字段;<br/>
+    Command/Field[@name="Add"]作用在setRows添加;<br/>
+    Command/Field[@name="Modify"]作用在setRows修改;<br/>
+    通过Field 值组建在 {S_fields} {S_values} {S_pairs};<br/>
+    setRows子节点Command[@name="Add"]下为设置行添加操作命令;<br/>
+    setRows子节点Command[@name="Modify"]下为设置行修改操作命令。
+ ### F.include 引入配置文件
+ <!--#include file="Manage.config"--><br/>
+ 备注:文件查找根目录在Models.conf目录下
+ ### G.自定义节点Path设置
+ 如<Manage><System></System></Manage><br/>
+ 命令调用用 Manage.System.
+
+
 
