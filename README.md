@@ -115,18 +115,18 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
  ```
  命令调用用 Manage.System.
  # Models手册 V0.0.1
- ##一.文件结构
- ###1.Bin目录
+ ## 一.文件结构
+ ### 1.Bin目录
  说明：.net 运行库目录用于存放编译好的运行库。
- ###2.App_Code目录
+ ### 2.App_Code目录
  说明：.net 程序源码（IIS将自动编译生成文件存放于.net 临时运行库里代码修改系统自动更新运行库
- ###3.Web.config文件
+ ### 3.Web.config文件
  说明：Web站点运行配置文件
- ###4.Models.config文件
+ ### 4.Models.config文件
  说明：Models运行配置文件
- ###5.Routes.config文件
+ ### 5.Routes.config文件
  说明：路由设置文件
- ##二.安装配置
+ ## 二.安装配置
  
  
 
