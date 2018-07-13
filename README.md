@@ -109,7 +109,10 @@ RModel是一个数据库,OData,WebService数据添加,修改,删除,变量映射
  <#include file="Manage.config">
  备注:文件查找根目录在Models.conf目录下
  ### G.自定义节点Path设置
- 如<Manage><System></System></Manage><br/>
+ 如
+ ```
+ <Manage><System></System></Manage>
+ ```
  命令调用用 Manage.System.
 
 
